@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.restorationIdentifier = "ViewController"
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }

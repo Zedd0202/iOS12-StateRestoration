@@ -14,7 +14,6 @@ class SecondViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
         viewController.title = title
-        
         return viewController
     }
     
@@ -22,27 +21,25 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
     }
-    
-    
 }
 
-//extension SecondViewController {
-//
-//    override func encodeRestorableState(with coder: NSCoder) {
-//        super.encodeRestorableState(with: coder)
-//
-//        coder.encode(self.title, forKey: "title")
-//    }
-//
-//    override func decodeRestorableState(with coder: NSCoder) {
-//        super.decodeRestorableState(with: coder)
-//
-//        self.title = coder.decodeObject(forKey: "title") as? String
-//        self.title = title
-//    }
-//
-//    override func applicationFinishedRestoringState() {
-//        print("\(type(of: self)) restoring ")
-//    }
-//}
-//
+extension SecondViewController {
+
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+
+        coder.encode(self.title, forKey: "title")
+    }
+
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+
+        self.title = coder.decodeObject(forKey: "title") as? String
+        self.title = title
+    }
+
+    override func applicationFinishedRestoringState() {
+        print("\(type(of: self)) restoring ")
+    }
+}
+
